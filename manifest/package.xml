@@ -34,16 +34,19 @@
     </types>
     <types>
         <members>Medical_Facility__c</members>
+        <members>Medical_Insurance__c</members>
 		<members>Person__c</members>
 		<name>CustomObject</name>
 	</types>
 	<types>
         <members>Medical_Facility__c</members>
+        <members>Medical_Insurance__c</members>
 		<members>Person__c</members>
 		<name>CustomTab</name>
 	</types>
 	<types>
         <members>Medical_Facility__c-Medical Facility Layout</members>
+        <members>Medical_Insurance__c-Medical Insurance Layout</members>
 		<members>Person__c-Doctor Layout</members>
 		<members>Person__c-Patient Layout</members>
 		<members>Person__c-Person Layout</members>
