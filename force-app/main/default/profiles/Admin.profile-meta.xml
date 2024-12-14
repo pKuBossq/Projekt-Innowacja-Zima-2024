@@ -59,6 +59,9 @@
         <layout>Medical_Facility__c-Medical Facility Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Medical_Insurance__c-Medical Insurance Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Person__c-Doctor Layout</layout>
         <recordType>Person__c.Doctor</recordType>
     </layoutAssignments>
@@ -84,6 +87,15 @@
         <allowEdit>true</allowEdit>
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
+        <object>Medical_Insurance__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
         <object>Person__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
@@ -97,6 +109,14 @@
         <recordType>Person__c.Patient</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
+    <tabVisibilities>
+        <tab>Medical_Facility__c</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>Medical_Insurance__c</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
     <tabVisibilities>
         <tab>Person__c</tab>
         <visibility>DefaultOn</visibility>
