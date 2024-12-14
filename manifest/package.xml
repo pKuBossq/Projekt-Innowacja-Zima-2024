@@ -38,6 +38,7 @@
 		<name>CustomObject</name>
 	</types>
 	<types>
+        <members>Medical_Facility__c</members>
 		<members>Person__c</members>
 		<name>CustomTab</name>
 	</types>
