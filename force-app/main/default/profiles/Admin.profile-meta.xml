@@ -7,6 +7,26 @@
     <custom>false</custom>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Medical_Facility__c.Address__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Medical_Facility__c.City__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Medical_Facility__c.Facility_Type__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Medical_Facility__c.Phone_Number__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Person__c.Date_of_Birth__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -36,6 +56,9 @@
         <readable>true</readable>
     </fieldPermissions>
     <layoutAssignments>
+        <layout>Medical_Facility__c-Medical Facility Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Person__c-Doctor Layout</layout>
         <recordType>Person__c.Doctor</recordType>
     </layoutAssignments>
@@ -46,6 +69,15 @@
     <layoutAssignments>
         <layout>Person__c-Person Layout</layout>
     </layoutAssignments>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>Medical_Facility__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
     <objectPermissions>
         <allowCreate>true</allowCreate>
         <allowDelete>true</allowDelete>
