@@ -32,5 +32,28 @@
         <members>*</members>
         <name>StaticResource</name>
     </types>
+    <types>
+		<members>Person__c</members>
+		<name>CustomObject</name>
+	</types>
+	<types>
+		<members>Person__c</members>
+		<name>CustomTab</name>
+	</types>
+	<types>
+		<members>Person__c-Doctor Layout</members>
+		<members>Person__c-Patient Layout</members>
+		<members>Person__c-Person Layout</members>
+		<name>Layout</name>
+	</types>
+	<types>
+		<members>Admin</members>
+		<name>Profile</name>
+	</types>
+	<types>
+		<members>Person__c.Doctor</members>
+		<members>Person__c.Patient</members>
+		<name>RecordType</name>
+	</types>
     <version>62.0</version>
 </Package>
