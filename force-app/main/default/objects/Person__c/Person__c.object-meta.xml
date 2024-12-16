@@ -159,7 +159,7 @@
         <label>Person Name</label>
         <type>Text</type>
     </nameField>
-    <pluralLabel>People</pluralLabel>
+    <pluralLabel>Persons</pluralLabel>
     <searchLayouts></searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>
