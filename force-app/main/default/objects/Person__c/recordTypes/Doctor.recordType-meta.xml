@@ -6,35 +6,19 @@
     <picklistValues>
         <picklist>Specialization__c</picklist>
         <values>
-            <fullName>Cardiology</fullName>
+            <fullName>Allergist</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Dermatology</fullName>
+            <fullName>Cardiologist</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Neurology</fullName>
+            <fullName>Internist</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Orthopedics</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Pediatrics</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Psychiatry</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Radiology</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Surgery</fullName>
+            <fullName>Laryngologist</fullName>
             <default>false</default>
         </values>
     </picklistValues>
