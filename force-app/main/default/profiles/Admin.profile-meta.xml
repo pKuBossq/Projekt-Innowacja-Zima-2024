@@ -55,6 +55,11 @@
         <field>Person__c.Specialization__c</field>
         <readable>true</readable>
     </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Prescription__c.Concession__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
     <layoutAssignments>
         <layout>Medical_Facility__c-Medical Facility Layout</layout>
     </layoutAssignments>
@@ -71,6 +76,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Person__c-Person Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Prescription__c-Prescription Layout</layout>
     </layoutAssignments>
     <objectPermissions>
         <allowCreate>true</allowCreate>
@@ -99,6 +107,15 @@
         <object>Person__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>Prescription__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>Person__c.Doctor</recordType>
@@ -119,6 +136,10 @@
     </tabVisibilities>
     <tabVisibilities>
         <tab>Person__c</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>Prescription__c</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <userLicense>Salesforce</userLicense>
