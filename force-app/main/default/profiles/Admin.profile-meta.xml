@@ -12,12 +12,12 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Medical_Facility__c.Facility_Type__c</field>
+        <field>Medical_Facility__c.Phone_Number__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Medical_Facility__c.Phone_Number__c</field>
+        <field>Medical_Facility__c.Type__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
