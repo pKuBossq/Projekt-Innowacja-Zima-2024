@@ -22,6 +22,16 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Medical_Insurance__c.Person__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Medical_Insurance__c.Status__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Person__c.Date_of_Birth__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -33,11 +43,6 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Person__c.Medical_Facility__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Person__c.Medical_Insurance__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
