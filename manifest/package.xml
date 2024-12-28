@@ -33,10 +33,11 @@
         <name>StaticResource</name>
     </types>
     <types>
-		<members>Premium_Clinic</members>
-		<name>CustomApplication</name>
-	</types>
-    <types>
+		     <members>Premium_Clinic</members>
+		     <name>CustomApplication</name>
+	 </types>
+   <types>
+        <members>Medical_Appointment__c</members>
         <members>Medical_Facility__c</members>
         <members>Medical_Insurance__c</members>
 		<members>Person__c</members>
@@ -44,6 +45,7 @@
 		<name>CustomObject</name>
 	</types>
 	<types>
+        <members>Medical_Appointment__c</members>
         <members>Medical_Facility__c</members>
         <members>Medical_Insurance__c</members>
 		<members>Person__c</members>
@@ -51,6 +53,7 @@
 		<name>CustomTab</name>
 	</types>
 	<types>
+        <members>Medical_Appointment__c-Medical Appointment Layout</members>
         <members>Medical_Facility__c-Medical Facility Layout</members>
         <members>Medical_Insurance__c-Medical Insurance Layout</members>
 		<members>Person__c-Doctor Layout</members>
@@ -64,6 +67,8 @@
 		<name>Profile</name>
 	</types>
 	<types>
+    	<members>Medical_Appointment__c.On_site</members>
+		<members>Medical_Appointment__c.Online</members>
 		<members>Person__c.Doctor</members>
 		<members>Person__c.Patient</members>
 		<name>RecordType</name>
