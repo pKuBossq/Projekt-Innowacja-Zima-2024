@@ -52,6 +52,10 @@
 		<members>Prescription__c</members>
 		<name>CustomTab</name>
 	</types>
+    <types>
+		<members>Premium_Clinic_UtilityBar</members>
+		<name>FlexiPage</name>
+	</types>
 	<types>
         <members>Medical_Appointment__c-Medical Appointment Layout</members>
         <members>Medical_Facility__c-Medical Facility Layout</members>
