@@ -61,6 +61,17 @@
         <readable>true</readable>
     </fieldPermissions>
     <layoutAssignments>
+        <layout>Medical_Appointment__c-Medical Appointment Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Medical_Appointment__c-Medical Appointment Layout</layout>
+        <recordType>Medical_Appointment__c.On_site</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Medical_Appointment__c-Medical Appointment Layout</layout>
+        <recordType>Medical_Appointment__c.Online</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Medical_Facility__c-Medical Facility Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -80,6 +91,15 @@
     <layoutAssignments>
         <layout>Prescription__c-Prescription Layout</layout>
     </layoutAssignments>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>Medical_Appointment__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
     <objectPermissions>
         <allowCreate>true</allowCreate>
         <allowDelete>true</allowDelete>
@@ -117,6 +137,16 @@
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <recordTypeVisibilities>
+        <default>true</default>
+        <recordType>Medical_Appointment__c.On_site</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Medical_Appointment__c.Online</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
         <default>false</default>
         <recordType>Person__c.Doctor</recordType>
         <visible>true</visible>
@@ -126,6 +156,10 @@
         <recordType>Person__c.Patient</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
+    <tabVisibilities>
+        <tab>Medical_Appointment__c</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
     <tabVisibilities>
         <tab>Medical_Facility__c</tab>
         <visibility>DefaultOn</visibility>
