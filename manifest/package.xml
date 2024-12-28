@@ -33,6 +33,10 @@
         <name>StaticResource</name>
     </types>
     <types>
+		     <members>Premium_Clinic</members>
+		     <name>CustomApplication</name>
+	 </types>
+   <types>
         <members>Medical_Appointment__c</members>
         <members>Medical_Facility__c</members>
         <members>Medical_Insurance__c</members>
