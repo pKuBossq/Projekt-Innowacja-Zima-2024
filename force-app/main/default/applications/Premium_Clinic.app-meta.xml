@@ -16,6 +16,7 @@
     <tabs>Medical_Appointment__c</tabs>
     <tabs>Medical_Facility__c</tabs>
     <tabs>Medical_Insurance__c</tabs>
+    <tabs>Person__c</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>Premium_Clinic_UtilityBar</utilityBar>
 </CustomApplication>
