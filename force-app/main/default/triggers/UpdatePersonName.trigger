@@ -1,4 +1,4 @@
-trigger UpdatePersonName on Person__c (before insert, before update)
+trigger UpdatePersonName on Person__c (before insert)
 {
     Map<Id,String> recordTypeMap = new Map<Id, String>();
     for (RecordType rt: [SELECT Id, Name FROM RecordType WHERE SObjectType = 'Person__c'])
