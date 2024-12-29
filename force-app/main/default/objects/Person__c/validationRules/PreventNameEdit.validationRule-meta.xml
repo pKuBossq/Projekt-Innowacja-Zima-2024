@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PreventNameEdit</fullName>
+    <active>true</active>
+    <description>Zapobieganie edytowaniu pola Name Pacjenta</description>
+    <errorConditionFormula>ISCHANGED(Name)</errorConditionFormula>
+    <errorMessage>Pole Name Pacjenta jest uzupelniane automatycznie i nie może być edytowane</errorMessage>
+</ValidationRule>
