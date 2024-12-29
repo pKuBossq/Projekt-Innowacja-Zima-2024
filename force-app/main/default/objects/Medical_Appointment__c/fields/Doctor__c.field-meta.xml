@@ -3,6 +3,15 @@
     <fullName>Doctor__c</fullName>
     <description>Doctor</description>
     <label>Doctor</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>Person__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Doctor</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
     <referenceTo>Person__c</referenceTo>
     <relationshipLabel>Medical Appointments (Doctor)</relationshipLabel>
     <relationshipName>Doctor_Appointments</relationshipName>
