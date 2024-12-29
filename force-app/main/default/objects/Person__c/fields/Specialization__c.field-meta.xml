@@ -30,6 +30,54 @@
                 <default>false</default>
                 <label>Laryngologist</label>
             </value>
+            <value>
+                <fullName>Cardiology</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Cardiology</label>
+            </value>
+            <value>
+                <fullName>Dermatology</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Dermatology</label>
+            </value>
+            <value>
+                <fullName>Neurology</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Neurology</label>
+            </value>
+            <value>
+                <fullName>Orthopedics</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Orthopedics</label>
+            </value>
+            <value>
+                <fullName>Pediatrics</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Pediatrics</label>
+            </value>
+            <value>
+                <fullName>Psychiatry</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Psychiatry</label>
+            </value>
+            <value>
+                <fullName>Radiology</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Radiology</label>
+            </value>
+            <value>
+                <fullName>Surgery</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Surgery</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>
