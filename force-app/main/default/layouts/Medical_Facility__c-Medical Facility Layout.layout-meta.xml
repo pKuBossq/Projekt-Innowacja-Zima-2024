@@ -24,6 +24,10 @@
                 <behavior>Edit</behavior>
                 <field>Address__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Insurance_Required__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -65,6 +69,10 @@
     <relatedLists>
         <fields>NAME</fields>
         <relatedList>Person__c.Medical_Facility__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <relatedList>Medical_Appointment__c.Medical_Facility__c</relatedList>
     </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showHighlightsPanel>false</showHighlightsPanel>
