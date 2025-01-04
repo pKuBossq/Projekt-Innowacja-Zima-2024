@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Personal_Id_Number_Validation</fullName>
+    <active>true</active>
+    <description>Validation rule checking the correctness of the PESEL number.</description>
+    <errorConditionFormula>LEN(Personal_ID_Number__c) &lt;&gt; 11 || 
+NOT(ISNUMBER(Personal_ID_Number__c)) ||
+NOT(
+ OR(
+   AND(VALUE(MID(Personal_ID_Number__c, 3, 2)) &gt;= 1, 
+   VALUE(MID(Personal_ID_Number__c, 3, 2)) &lt;= 12), 
+   AND(VALUE(MID(Personal_ID_Number__c, 3, 2)) &gt;= 21, 
+   VALUE(MID(Personal_ID_Number__c, 3, 2)) &lt;= 32), 
+   AND(VALUE(MID(Personal_ID_Number__c, 3, 2)) &gt;= 41, 
+   VALUE(MID(Personal_ID_Number__c, 3, 2)) &lt;= 52), 
+   AND(VALUE(MID(Personal_ID_Number__c, 3, 2)) &gt;= 61, 
+   VALUE(MID(Personal_ID_Number__c, 3, 2)) &lt;= 72), 
+   AND(VALUE(MID(Personal_ID_Number__c, 3, 2)) &gt;= 81, 
+   VALUE(MID(Personal_ID_Number__c, 3, 2)) &lt;= 92) 
+ )
+)</errorConditionFormula>
+    <errorMessage>Personal Id Number does not meet the requirements of a PESEL number</errorMessage>
+</ValidationRule>
