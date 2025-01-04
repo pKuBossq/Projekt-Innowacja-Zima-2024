@@ -78,6 +78,7 @@
 		<name>RecordType</name>
 	</types>
     <types>
+        <members>Person__c.Personal_Id_Number_Validation</members>
 		<members>Person__c.PreventNameEdit</members>
 		<name>ValidationRule</name>
 	</types>
