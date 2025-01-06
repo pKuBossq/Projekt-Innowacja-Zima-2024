@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PreventNameEdit</fullName>
+    <active>true</active>
+    <description>Preventing editing of the Person Name on Record Type Patient</description>
+    <errorConditionFormula>AND(
+    RecordType.Name = &quot;Patient&quot;,
+    ISCHANGED(Name)
+)</errorConditionFormula>
+    <errorMessage>The Person Name field is filled in automatically and cannot be edited</errorMessage>
+</ValidationRule>

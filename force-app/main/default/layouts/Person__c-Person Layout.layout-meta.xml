@@ -35,12 +35,16 @@
                 <field>Medical_Facility__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Required</behavior>
+                <behavior>Edit</behavior>
                 <field>PESEL__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Specialization__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Required</behavior>
+                <field>Personal_ID_Number__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
