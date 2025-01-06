@@ -19,6 +19,10 @@
                 <field>Doctor__c</field>
             </layoutItems>
             <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Medical_Facility__c</field>
+            </layoutItems>
+            <layoutItems>
                 <behavior>Required</behavior>
                 <field>Appointment_Date__c</field>
             </layoutItems>
