@@ -155,8 +155,9 @@
     <externalSharingModel>Private</externalSharingModel>
     <label>Prescription</label>
     <nameField>
+        <displayFormat>PRESC-{0000}</displayFormat>
         <label>Prescription Name</label>
-        <type>Text</type>
+        <type>AutoNumber</type>
     </nameField>
     <pluralLabel>Prescriptions</pluralLabel>
     <searchLayouts></searchLayouts>
