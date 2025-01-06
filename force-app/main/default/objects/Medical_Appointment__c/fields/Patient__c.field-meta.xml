@@ -4,6 +4,15 @@
     <deleteConstraint>Restrict</deleteConstraint>
     <description>Patient</description>
     <label>Patient</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>Person__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Patient</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
     <referenceTo>Person__c</referenceTo>
     <relationshipLabel>Medical Appointments</relationshipLabel>
     <relationshipName>Patient_Appointments</relationshipName>

@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
-        <members>*</members>
-        <name>ApexClass</name>
-    </types>
+		<members>MedicalAppointmentNameTriggerTest</members>
+        <members>EmailManager</members>
+		<name>ApexClass</name>
+	</types>
     <types>
         <members>*</members>
         <name>ApexComponent</name>
@@ -33,8 +34,8 @@
         <name>StaticResource</name>
     </types>
     <types>
-		     <members>Premium_Clinic</members>
-		     <name>CustomApplication</name>
+	    <members>Premium_Clinic</members>
+		<name>CustomApplication</name>
 	 </types>
    <types>
         <members>Medical_Appointment__c</members>
@@ -78,6 +79,7 @@
 		<name>RecordType</name>
 	</types>
     <types>
+        <members>Person__c.Personal_Id_Number_Validation</members>
 		<members>Person__c.PreventNameEdit</members>
 		<name>ValidationRule</name>
 	</types>
