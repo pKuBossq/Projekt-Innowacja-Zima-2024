@@ -6,13 +6,23 @@
         <visible>true</visible>
     </applicationVisibilities>
     <classAccesses>
-        <apexClass>MyFirstClass</apexClass>
+        <apexClass>MedicalAppointmentNameTriggerTest</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <custom>false</custom>
     <fieldPermissions>
         <editable>true</editable>
         <field>Medical_Facility__c.Address__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Medical_Facility__c.City__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Medical_Facility__c.Facility_Type__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -52,9 +62,13 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Person__c.PESEL__c</field>
+        <field>Person__c.Medical_Insurance__c</field>
         <readable>true</readable>
     </fieldPermissions>
+    <fieldPermissions>
+      <editable>true</editable>
+      <field>Person__c.PESEL__c</field>
+      <readable>true</readable>
     <fieldPermissions>
         <editable>true</editable>
         <field>Person__c.Phone_Number__c</field>
