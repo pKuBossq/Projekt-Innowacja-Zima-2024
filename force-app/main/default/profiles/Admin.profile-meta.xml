@@ -10,10 +10,6 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>MyFirstClass</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
         <apexClass>MedicalAppointmentNameTriggerTest</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -56,11 +52,6 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Person__c.Medical_Facility__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Person__c.Medical_Insurance__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
