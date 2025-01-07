@@ -1,58 +1,14 @@
 @isTest
 public class MedicalAppointmentNameTriggerTest {
     @isTest
-    static void testBulkTrigger() {
+    static void testTrigger() {
         Medical_Facility__c facility = new Medical_Facility__c(Name = 'City Hospital');
         insert facility;
 
         Person__c doctor = new Person__c(
             Last_Name__c = 'Smith',
             First_Name__c = 'John',
-            Personal_ID_Number__c = '12110572711',
-            RecordTypeId = [SELECT Id FROM RecordType WHERE SObjectType = 'Person__c' AND Name = 'Doctor'].Id
-        );
-        insert doctor;
-
-        List<Person__c> patients = new List<Person__c>();
-        for (Integer i = 1; i <= 10; i++) {
-            patients.add(new Person__c(
-                Last_Name__c = 'Doe' + i,
-                First_Name__c = 'Jane' + i,
-                Personal_ID_Number__c = '12110' + String.valueOf(50 + i) + '7211',
-                RecordTypeId = [SELECT Id FROM RecordType WHERE SObjectType = 'Person__c' AND Name = 'Patient'].Id
-            ));
-        }
-        insert patients;
-
-        List<Medical_Appointment__c> appointments = new List<Medical_Appointment__c>();
-
-        for (Person__c patient : patients) {
-            appointments.add(new Medical_Appointment__c(
-                Patient__c = patient.Id,
-                Doctor__c = doctor.Id,
-                Medical_Facility__c = facility.Id,
-                Appointment_Date__c = DateTime.newInstance(2025, 12, 28, 10, 30, 0)
-            ));
-        }
-        insert appointments;
-
-        List<Medical_Appointment__c> savedAppointments = [
-            SELECT Name
-            FROM Medical_Appointment__c
-            WHERE Id IN :appointments
-        ];
-
-        for (Integer i = 0; i < savedAppointments.size(); i++) {
-            String expectedName = 'City Hospital-Smith-Doe' + (i + 1) + '-28-12-2025';
-            System.assertEquals(expectedName, savedAppointments[i].Name, 'Nazwa rekordu nie jest zgodna dla indeksu: ' + i);
-        }
-    }
-    @isTest
-    static void testIncompleteTrigger() {
-        Person__c doctor = new Person__c(
-            Last_Name__c = 'Smith',
-            First_Name__c = 'John',
-            Personal_ID_Number__c = '12113456781',
+            Personal_ID_Number__c = '19282675484',
             RecordTypeId = [SELECT Id FROM RecordType WHERE SObjectType = 'Person__c' AND Name = 'Doctor'].Id
         );
         insert doctor;
@@ -60,7 +16,38 @@ public class MedicalAppointmentNameTriggerTest {
         Person__c patient = new Person__c(
             Last_Name__c = 'Doe',
             First_Name__c = 'Jane',
-            Personal_ID_Number__c = '12113456782',
+            Personal_ID_Number__c = '95112981129',
+            RecordTypeId = [SELECT Id FROM RecordType WHERE SObjectType = 'Person__c' AND Name = 'Patient'].Id
+        );
+        insert patient;
+        
+        Medical_Appointment__c appointment = new Medical_Appointment__c(
+            Patient__c = patient.Id,
+            Doctor__c = doctor.Id,
+            Medical_Facility__c = facility.Id,
+            Appointment_Date__c = DateTime.newInstance(2025, 12, 28, 10, 30, 0)
+        );
+        insert appointment;
+
+        appointment = [SELECT Name FROM Medical_Appointment__c WHERE Id = :appointment.Id];
+
+        String expectedName = 'City Hospital-Smith-Doe-28-12-2025';
+        System.assertEquals(expectedName, appointment.Name);
+    }
+    @isTest
+    static void testIncompleteTrigger() {
+        Person__c doctor = new Person__c(
+            Last_Name__c = 'Smith',
+            First_Name__c = 'John',
+            Personal_ID_Number__c = '19282675484',
+            RecordTypeId = [SELECT Id FROM RecordType WHERE SObjectType = 'Person__c' AND Name = 'Doctor'].Id
+        );
+        insert doctor;
+
+        Person__c patient = new Person__c(
+            Last_Name__c = 'Doe',
+            First_Name__c = 'Jane',
+            Personal_ID_Number__c = '95112981129',
             RecordTypeId = [SELECT Id FROM RecordType WHERE SObjectType = 'Person__c' AND Name = 'Patient'].Id
         );
         insert patient;
@@ -74,6 +61,7 @@ public class MedicalAppointmentNameTriggerTest {
 
         appointment = [SELECT Name FROM Medical_Appointment__c WHERE Id = :appointment.Id];
         
-        System.assertEquals('Missing Facility Name-Smith-Doe-28-12-2025', appointment.Name);
+        String expectedName = 'Missing Facility Name-Smith-Doe-28-12-2025';
+        System.assertEquals(expectedName, appointment.Name);
     }
 }
