@@ -4,6 +4,7 @@ trigger FirstInternistAppointmentValidate on Medical_Appointment__c (before inse
     
     List<Medical_Appointment__c> onlineAppointments = new List<Medical_Appointment__c>();
     Set<Id> patientsIds = new Set<Id>();
+    Set<Id> doctorsIds = new Set<Id>();
 
     for(Medical_Appointment__c appointment: Trigger.new) 
     {
@@ -11,28 +12,29 @@ trigger FirstInternistAppointmentValidate on Medical_Appointment__c (before inse
         {
             onlineAppointments.add(appointment);
             patientsIds.add(appointment.Patient__c);
+            doctorsIds.add(appointment.Doctor__c);
         }
     }
     
-    List<Person__c> internistDoctors  = [SELECT Id FROM Person__c WHERE Specialization__c = 'Internist'];
-    Set<Id> internistIds = new Set<Id>();
-    
-    for(Person__c doctor: internistDoctors)
+    if(onlineAppointments.isEmpty())
     {
-        internistIds.add(doctor.Id);
+        return;
     }
     
-    List<Medical_Appointment__c> prevInternistAppointments = [SELECT Patient__c FROM Medical_Appointment__c WHERE Doctor__c IN :internistIds AND Patient__c IN :patientsIds];
-    Set<Id> patientsWithPrevAppointments = new Set<Id>();
+    Map<Id, Person__c> internistMap = new Map<Id, Person__c>([Select Id FROM Person__c WHERE Id IN :doctorsIds AND Specialization__c = 'Internist']);
+    
+    List<Medical_Appointment__c> prevInternistAppointments = [SELECT Patient__c FROM Medical_Appointment__c WHERE Doctor__r.Specialization__c = 'Internist' AND Patient__c IN :patientsIds];
+    
+    Set<Id> patientsWithPrevInternistAppointments = new Set<Id>();
     
     for(Medical_Appointment__c appointment: prevInternistAppointments)
     {
-        patientsWithPrevAppointments.add(appointment.Patient__c);
+        patientsWithPrevInternistAppointments.add(appointment.Patient__c);
     }
     
     for (Medical_Appointment__c appointment: onlineAppointments) 
     {
-        if(internistIds.contains(appointment.Doctor__c) && !patientsWithPrevAppointments.contains(appointment.Patient__c))
+        if(internistMap.containsKey(appointment.Doctor__c) && !patientsWithPrevInternistAppointments.contains(appointment.Patient__c))
         {
             appointment.addError('First Internist Appointment must be on site');
         }
