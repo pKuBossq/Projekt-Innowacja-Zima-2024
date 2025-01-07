@@ -8,8 +8,8 @@ public class MedicalAppointmentNameTriggerTest {
         Person__c doctor = new Person__c(
             Last_Name__c = 'Smith',
             First_Name__c = 'John',
-            PESEL__c = '12345678',
-            Medical_Facility__c = facility.Id
+            Personal_ID_Number__c = '12110572711',
+            RecordTypeId = [SELECT Id FROM RecordType WHERE SObjectType = 'Person__c' AND Name = 'Doctor'].Id
         );
         insert doctor;
 
@@ -18,7 +18,8 @@ public class MedicalAppointmentNameTriggerTest {
             patients.add(new Person__c(
                 Last_Name__c = 'Doe' + i,
                 First_Name__c = 'Jane' + i,
-                PESEL__c = '12345678' + i
+                Personal_ID_Number__c = '12110' + String.valueOf(50 + i) + '7211',
+                RecordTypeId = [SELECT Id FROM RecordType WHERE SObjectType = 'Person__c' AND Name = 'Patient'].Id
             ));
         }
         insert patients;
@@ -29,7 +30,8 @@ public class MedicalAppointmentNameTriggerTest {
             appointments.add(new Medical_Appointment__c(
                 Patient__c = patient.Id,
                 Doctor__c = doctor.Id,
-                Appointment_Date__c = DateTime.newInstance(2024, 12, 28, 10, 30, 0)
+                Medical_Facility__c = facility.Id,
+                Appointment_Date__c = DateTime.newInstance(2025, 12, 28, 10, 30, 0)
             ));
         }
         insert appointments;
@@ -41,7 +43,7 @@ public class MedicalAppointmentNameTriggerTest {
         ];
 
         for (Integer i = 0; i < savedAppointments.size(); i++) {
-            String expectedName = 'City Hospital-Smith-Doe' + (i + 1) + '-28-12-2024';
+            String expectedName = 'City Hospital-Smith-Doe' + (i + 1) + '-28-12-2025';
             System.assertEquals(expectedName, savedAppointments[i].Name, 'Nazwa rekordu nie jest zgodna dla indeksu: ' + i);
         }
     }
@@ -50,26 +52,28 @@ public class MedicalAppointmentNameTriggerTest {
         Person__c doctor = new Person__c(
             Last_Name__c = 'Smith',
             First_Name__c = 'John',
-            PESEL__c = '12345678'
+            Personal_ID_Number__c = '12113456781',
+            RecordTypeId = [SELECT Id FROM RecordType WHERE SObjectType = 'Person__c' AND Name = 'Doctor'].Id
         );
         insert doctor;
 
         Person__c patient = new Person__c(
             Last_Name__c = 'Doe',
             First_Name__c = 'Jane',
-            PESEL__c = '12345678'
+            Personal_ID_Number__c = '12113456782',
+            RecordTypeId = [SELECT Id FROM RecordType WHERE SObjectType = 'Person__c' AND Name = 'Patient'].Id
         );
         insert patient;
 
 		Medical_Appointment__c appointment = new Medical_Appointment__c(
             Patient__c = patient.Id,
             Doctor__c = doctor.Id,
-        	Appointment_Date__c = DateTime.newInstance(2024, 12, 28, 10, 30, 0)
+        	Appointment_Date__c = DateTime.newInstance(2025, 12, 28, 10, 30, 0)
         );
         insert appointment;
 
         appointment = [SELECT Name FROM Medical_Appointment__c WHERE Id = :appointment.Id];
         
-        System.assertEquals('Incomplete Information', appointment.Name);
+        System.assertEquals('Missing Facility Name-Smith-Doe-28-12-2025', appointment.Name);
     }
 }
