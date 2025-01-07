@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Expire_Date__c</fullName>
-    <label>Expire_Date</label>
+    <defaultValue>Today() + 31</defaultValue>
+    <label>Expire Date</label>
     <required>true</required>
     <trackTrending>false</trackTrending>
     <type>Date</type>

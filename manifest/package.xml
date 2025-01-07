@@ -36,6 +36,7 @@
         <members>Medical_Facility__c</members>
         <members>Medical_Insurance__c</members>
 		<members>Person__c</members>
+        <members>Prescription_Item__c</members>
 		<members>Prescription__c</members>
 		<name>CustomObject</name>
 	</types>
@@ -43,6 +44,7 @@
         <members>Medical_Facility__c</members>
         <members>Medical_Insurance__c</members>
 		<members>Person__c</members>
+        <members>Prescription_Item__c</members>
 		<members>Prescription__c</members>
 		<name>CustomTab</name>
 	</types>
@@ -52,6 +54,7 @@
 		<members>Person__c-Doctor Layout</members>
 		<members>Person__c-Patient Layout</members>
 		<members>Person__c-Person Layout</members>
+        <members>Prescription_Item__c-Prescription Item Layout</members>
 		<members>Prescription__c-Prescription Layout</members>
 		<name>Layout</name>
 	</types>
