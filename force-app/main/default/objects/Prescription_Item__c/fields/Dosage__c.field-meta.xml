@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Release_Date__c</fullName>
-    <defaultValue>Today()</defaultValue>
-    <label>Release Date</label>
+    <fullName>Dosage__c</fullName>
+    <label>Dosage</label>
     <required>true</required>
     <trackTrending>false</trackTrending>
-    <type>Date</type>
+    <type>TextArea</type>
 </CustomField>
