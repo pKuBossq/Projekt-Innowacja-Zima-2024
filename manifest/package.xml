@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
+		<members>EmailManager</members>
 		<members>MedicalAppointmentNameTriggerTest</members>
-        <members>EmailManager</members>
+		<members>MedicalFacilitiesHttpMock</members>
+		<members>MedicalFacilitiesSync</members>
+		<members>MedicalFacilitiesSyncSchedule</members>
+		<members>MedicalFacilitiesSyncScheduleTest</members>
+		<members>MedicalFacilitiesSyncTest</members>
 		<name>ApexClass</name>
 	</types>
     <types>
@@ -77,6 +82,11 @@
 		<members>Person__c.Doctor</members>
 		<members>Person__c.Patient</members>
 		<name>RecordType</name>
+	</types>
+    <types>
+		<members>MedicalFacilityAuthorize</members>
+		<members>MedicialFacilityREST</members>
+		<name>RemoteSiteSetting</name>
 	</types>
     <types>
         <members>Person__c.Personal_Id_Number_Validation</members>

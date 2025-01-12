@@ -1,34 +1,20 @@
 @isTest
 private class MedicalFacilitiesSyncTest {
-    @isTest static void testUpdate() {
-        Test.setMock(HttpCalloutMock.class, new MyFacilitiesHttpMock());
+    @isTest static void testUpsert() {
+        Test.setMock(HttpCalloutMock.class, new MedicalFacilitiesHttpMock());
         Test.startTest();
-        MedicalFacilitiesSync.updateMedicalFacilities();
-        Test.stopTest();
-    }
-
-    @isTest static void testScheduleJob() {
-        Test.startTest();
-        MedicalFacilitiesSync.scheduleJob();
+        MedicalFacilitiesSync.upsertMedicalFacilities();
         Test.stopTest();
 
-        CronTrigger ct = [SELECT Id, CronExpression, TimesTriggered, NextFireTime FROM CronTrigger WHERE CronJobDetail.Name = 'Daily Medical Facilities Update' LIMIT 1];
-        System.assertEquals('0 0 5 * * ?', ct.CronExpression);
-        System.assertEquals(0, ct.TimesTriggered);
-    }
-
-    // Mock dla calloutu
-    private class MyFacilitiesHttpMock implements HttpCalloutMock {
-        public HttpResponse respond(HttpRequest req) {
-            HttpResponse res = new HttpResponse();
-            if (req.getEndpoint().contains('/oauth2/token')) {
-                res.setStatusCode(200);
-                res.setBody('{"access_token":"fakeToken"}');
-            } else {
-                res.setStatusCode(200);
-                res.setBody('[{"Name":"Clinic A","Type__c":"General"}]');
-            }
-            return res;
-        }
+        List<Medical_Facility__c> facilities = [
+            SELECT Name, Phone_Number__c, Address__Street__s, Address__PostalCode__s, Address__City__s
+            FROM Medical_Facility__c
+        ];
+        System.assertEquals(2, facilities.size());
+        System.assertEquals('Centrum Zdrowia Hipopotam', facilities[0].Name);
+        System.assertEquals('+48 123 456 780', facilities[0].Phone_Number__c);
+        System.assertEquals('Wyszyńskiego 7', facilities[0].Address__Street__s);
+        System.assertEquals('75-620', facilities[0].Address__PostalCode__s);
+        System.assertEquals('Koszalin', facilities[0].Address__City__s);
     }
 }

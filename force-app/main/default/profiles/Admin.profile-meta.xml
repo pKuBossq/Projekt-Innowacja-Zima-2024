@@ -13,6 +13,26 @@
         <apexClass>MedicalAppointmentNameTriggerTest</apexClass>
         <enabled>true</enabled>
     </classAccesses>
+    <classAccesses>
+        <apexClass>MedicalFacilitiesHttpMock</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>MedicalFacilitiesSync</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>MedicalFacilitiesSyncSchedule</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>MedicalFacilitiesSyncScheduleTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>MedicalFacilitiesSyncTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
     <custom>false</custom>
     <fieldPermissions>
         <editable>true</editable>
@@ -601,10 +621,10 @@
         <enabled>true</enabled>
         <name>ManageContentProperties</name>
     </userPermissions>
-    <!-- <userPermissions>
+    <userPermissions>
         <enabled>true</enabled>
         <name>ManageContentTaxonomy</name>
-    </userPermissions> -->
+    </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
         <name>ManageContentTypes</name>
@@ -713,10 +733,10 @@
         <enabled>true</enabled>
         <name>ManagePasswordPolicies</name>
     </userPermissions>
-    <!-- <userPermissions>
+    <userPermissions>
         <enabled>true</enabled>
         <name>ManagePersonalOrg</name>
-    </userPermissions> -->
+    </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
         <name>ManageProfilesPermissionsets</name>
@@ -925,10 +945,10 @@
         <enabled>true</enabled>
         <name>SubscribeToLightningReports</name>
     </userPermissions>
-    <!-- <userPermissions>
+    <userPermissions>
         <enabled>true</enabled>
         <name>TerritoryOperations</name>
-    </userPermissions> -->
+    </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
         <name>TransactionalEmailSend</name>
@@ -1017,10 +1037,10 @@
         <enabled>true</enabled>
         <name>ViewMyTeamsDashboards</name>
     </userPermissions>
-    <!-- <userPermissions>
+    <userPermissions>
         <enabled>true</enabled>
         <name>ViewPersonalOrg</name>
-    </userPermissions> -->
+    </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
         <name>ViewPublicDashboards</name>
