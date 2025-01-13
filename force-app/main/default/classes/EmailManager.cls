@@ -4,7 +4,7 @@ public class EmailManager {
 
         List<Messaging.SingleEmailMessage> emailsToSend = new List<Messaging.SingleEmailMessage>();        
         List<Contact> tempContacts = new List<Contact>();
-        
+
         for(Person__c patient : patients) {
             Contact tempContact = new Contact(
                 LastName = patient.Last_Name__c,
@@ -42,6 +42,15 @@ public class EmailManager {
                 System.debug('Email sent successfully');
             } else {
                 System.debug('The following errors occurred: ' + res.getErrors());
+                
+                Messaging.SingleEmailMessage errorMail = new Messaging.SingleEmailMessage();
+                String[] adminEmails = new String[] {'245775@edu.p.lodz.pl'}; 
+                
+                errorMail.setToAddresses(adminEmails);
+                errorMail.setSubject('Błąd podczas wysyłania maila - Medical Appointment Update');
+                errorMail.setPlainTextBody('Wystąpił błąd podczas wysyłania maila:\n' + String.join(res.getErrors(), '\n'));
+                
+                Messaging.sendEmail(new Messaging.SingleEmailMessage[] { errorMail });
             }
         }
     }
