@@ -96,5 +96,9 @@
 		<members>Person__c.PreventNameEdit</members>
 		<name>ValidationRule</name>
 	</types>
+    <types>
+		<members>unfiled$public/AppointmentUpdateMail</members>
+		<name>EmailTemplate</name>
+	</types>
     <version>62.0</version>
 </Package>
