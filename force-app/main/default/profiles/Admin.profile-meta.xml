@@ -46,7 +46,17 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Medical_Facility__c.Email__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Medical_Facility__c.Insurance_Required__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Medical_Facility__c.Opening_Hours__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
