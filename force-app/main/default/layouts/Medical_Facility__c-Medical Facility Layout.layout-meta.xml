@@ -10,6 +10,10 @@
         <layoutColumns>
             <layoutItems>
                 <behavior>Required</behavior>
+                <field>Id__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Required</behavior>
                 <field>Name</field>
             </layoutItems>
             <layoutItems>
@@ -66,6 +70,9 @@
         <layoutColumns/>
         <style>CustomLinks</style>
     </layoutSections>
+    <miniLayout>
+        <fields>Id__c</fields>
+    </miniLayout>
     <relatedLists>
         <fields>NAME</fields>
         <relatedList>Person__c.Medical_Facility__c</relatedList>
