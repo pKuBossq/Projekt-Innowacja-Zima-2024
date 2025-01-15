@@ -11,7 +11,7 @@ Twoja wizyta została zaktualizowana.
 
 Dane wizyty:
 
-Numer wizyty: {!Medical_Appointment__c.Name}
+Numer wizyty: {!Medical_Appointment__c.Appointment_Name__c}
 Pacjent: {!Contact.FirstName} {!Contact.LastName}
 Lekarz: {!Person__c.First_Name__c} {!Person__c.Last_Name__c}
 Data wizyty: {!Medical_Appointment__c.Appointment_Date__c}

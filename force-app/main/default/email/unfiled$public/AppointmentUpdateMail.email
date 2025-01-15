@@ -3,7 +3,7 @@
 <p>Twoja wizyta została zaktualizowana.</p>
 <p>Dane wizyty:</p>
 <ul>
-    <li>Numer wizyty: {!Medical_Appointment__c.Name}</li>
+    <li>Numer wizyty: {!Medical_Appointment__c.Appointment_Name__c}</li>
     <li>Pacjent: {!Contact.FirstName} {!Contact.LastName}</li>
     <li>Lekarz: {!Person__c.First_Name__c} {!Person__c.Last_Name__c}</li>
     <li>Data wizyty: {!Medical_Appointment__c.Appointment_Date__c}</li>
