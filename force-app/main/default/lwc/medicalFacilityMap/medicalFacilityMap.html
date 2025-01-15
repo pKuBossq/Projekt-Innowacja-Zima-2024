@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="Mapa Placówek Medycznych" icon-name="standard:location">
+        <div class="slds-p-around_medium">
+            <template if:true={medicalFacilities}>
+                <lightning-map map-markers={mapMarkers} zoom-level="12" center={center}></lightning-map>
+            </template>
+            <template if:true={error}>
+                <p class="slds-text-color_error">{error}</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>
