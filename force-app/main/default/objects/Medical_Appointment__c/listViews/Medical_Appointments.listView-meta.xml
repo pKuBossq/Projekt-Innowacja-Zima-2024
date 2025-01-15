@@ -3,6 +3,6 @@
     <fullName>Medical_Appointments</fullName>
     <columns>Appointment_Name__c</columns>
     <columns>NAME</columns>
-    <filterScope>Mine</filterScope>
+    <filterScope>Everything</filterScope>
     <label>Medical Appointments</label>
 </ListView>
