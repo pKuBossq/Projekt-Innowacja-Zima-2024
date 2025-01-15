@@ -52,7 +52,7 @@ trigger MedicalAppointmentNameTrigger on Medical_Appointment__c (before insert, 
             !String.isEmpty(doctorLastName) &&
             !String.isEmpty(formattedDate)) {
 
-            appointment.Name = facilityName + '-' +
+            appointment.Appointment_Name__c = facilityName + '-' +
                                doctorLastName + '-' +
                                patientLastName + '-' +
                                formattedDate;
@@ -60,7 +60,7 @@ trigger MedicalAppointmentNameTrigger on Medical_Appointment__c (before insert, 
         !String.isEmpty(patientLastName) && 
         !String.isEmpty(doctorLastName) && 
         !String.isEmpty(formattedDate)){
-            appointment.Name = 'Missing Facility Name-' +
+            appointment.Appointment_Name__c = 'Missing Facility Name-' +
                                doctorLastName + '-' +
                                patientLastName + '-' +
                                formattedDate;

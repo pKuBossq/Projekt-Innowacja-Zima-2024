@@ -36,6 +36,11 @@
     <custom>false</custom>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Medical_Appointment__c.Appointment_Name__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Medical_Appointment__c.Medical_Facility__c</field>
         <readable>true</readable>
     </fieldPermissions>
