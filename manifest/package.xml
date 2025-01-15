@@ -38,6 +38,10 @@
         <members>*</members>
         <name>StaticResource</name>
     </types>
+	<types>
+		<members>*</members>
+		<name>CompactLayout</name>
+	</types>
     <types>
 	    <members>Premium_Clinic</members>
 		<name>CustomApplication</name>
@@ -74,6 +78,10 @@
         <members>Prescription_Item__c-Prescription Item Layout</members>
 		<members>Prescription__c-Prescription Layout</members>
 		<name>Layout</name>
+	</types>
+	<types>
+		<members>Medical_Appointment__c.Medical_Appointments</members>
+		<name>ListView</name>
 	</types>
 	<types>
 		<members>Admin</members>
