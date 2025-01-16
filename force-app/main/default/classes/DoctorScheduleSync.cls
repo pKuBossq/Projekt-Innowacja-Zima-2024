@@ -28,16 +28,11 @@ public with sharing class DoctorScheduleSync implements Queueable, Database.Allo
         return null;
     }
 
-    private void upsertDoctorSchedules(List<Doctor> doctors) {
+    private void updateDoctorSchedules(List<Doctor> doctors) {
         List<Person__c> doctorsToUpsert = new List<Person__c>();
 
         for (Doctor doctor : doctors) {
             Person__c person = new Person__c();
-            person.First_Name__c = 'Jakub';
-            person.Last_Name__c = 'Borkiewicz';
-            person.Name = 'Doktor';
-            // person.RecordTypeId = 'Doctor';
-            person.Personal_ID_Number__c = '19282675484';
             person.DoctorId__c = doctor.DoctorId;
             String schedule = 'Poniedziałek: "' + formatSchedule(doctor.Schedule.Monday) + '"\n' +
                               'Wtorek: "' + formatSchedule(doctor.Schedule.Tuesday) + '"\n' +
@@ -49,101 +44,29 @@ public with sharing class DoctorScheduleSync implements Queueable, Database.Allo
             doctorsToUpsert.add(person);
         }
 
-        upsert doctorsToUpsert Person__c.DoctorId__c;
+        update doctorsToUpsert
     }
 
-    private String formatSchedule(Monday day) {
+    private String formatSchedule(Day day) {
     if (day == null) {
         return 'Brak danych';
     }
     return day.StartTime + ' - ' + day.EndTime;
     }
 
-    private String formatSchedule(Tuesday day) {
-    if (day == null) {
-        return 'Brak danych';
-    }
-    return day.StartTime + ' - ' + day.EndTime;
-    }
-
-    private String formatSchedule(Wednesday day) {
-    if (day == null) {
-        return 'Brak danych';
-    }
-    return day.StartTime + ' - ' + day.EndTime;
-    }
-
-    private String formatSchedule(Thursday day) {
-    if (day == null) {
-        return 'Brak danych';
-    }
-    return day.StartTime + ' - ' + day.EndTime;
-    }
-
-    private String formatSchedule(Friday day) {
-    if (day == null) {
-        return 'Brak danych';
-    }
-    return day.StartTime + ' - ' + day.EndTime;
-    }
-
-    private String formatSchedule(Saturday day) {
-    if (day == null) {
-        return 'Brak danych';
-    }
-    return day.StartTime + ' - ' + day.EndTime;
-    }
-
-    private String formatSchedule(Sunday day) {
-    if (day == null) {
-        return 'Brak danych';
-    }
-    return day.StartTime + ' - ' + day.EndTime;
-    }
-
-    public class Sunday {
-        public String EndTime;
-        public String StartTime;
-    }
-
-    public class Saturday {
-        public String EndTime;
-        public String StartTime;
-    }
-
-    public class Friday {
-        public String EndTime;
-        public String StartTime;
-    }
-
-    public class Thursday {
-        public String EndTime;
-        public String StartTime;
-    }
-
-    public class Wednesday {
-        public String EndTime;
-        public String StartTime;
-    }
-
-    public class Tuesday {
-        public String EndTime;
-        public String StartTime;
-    }
-
-    public class Monday {
+    public class Day {
         public String EndTime;
         public String StartTime;
     }
 
     public class Schedule {
-        public Sunday Sunday;
-        public Saturday Saturday;
-        public Friday Friday;
-        public Thursday Thursday;
-        public Wednesday Wednesday;
-        public Tuesday Tuesday;
-        public Monday Monday;
+        public Day Sunday;
+        public Day Saturday;
+        public Day Friday;
+        public Day Thursday;
+        public Day Wednesday;
+        public Day Tuesday;
+        public Day Monday;
     }
 
     public class Doctor {
