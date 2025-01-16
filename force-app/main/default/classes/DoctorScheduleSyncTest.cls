@@ -13,7 +13,7 @@ private class DoctorScheduleSyncTest {
             FROM Person__c
         ];
         System.assertEquals(1, doctors.size());
-        System.assertEquals('012KM000000VvlwYAC', doctors[0].RecordTypeId);
+        System.assertEquals([SELECT Id FROM RecordType WHERE SObjectType = 'Person__c' AND Name = 'Doctor'].Id, doctors[0].RecordTypeId);
         System.assertEquals('Grzegorz', doctors[0].First_Name__c);
         System.assertEquals('Król', doctors[0].Last_Name__c);
         System.assertEquals('Dr Grzegorz Król', doctors[0].Name);
