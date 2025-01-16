@@ -13,6 +13,22 @@
     <isOmniPinnedViewEnabled>false</isOmniPinnedViewEnabled>
     <label>Premium Clinic</label>
     <navType>Standard</navType>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Medical_Facility_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Medical_Facility__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>Admin</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Medical_Facility_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Medical_Facility__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>Admin</profile>
+    </profileActionOverrides>
     <tabs>Medical_Appointment__c</tabs>
     <tabs>Medical_Facility__c</tabs>
     <tabs>Medical_Insurance__c</tabs>

@@ -12,6 +12,7 @@
 		<members>MedicalFacilitiesSyncSchedule</members>
 		<members>MedicalFacilitiesSyncScheduleTest</members>
 		<members>MedicalFacilitiesSyncTest</members>
+		<members>MedicalFacilityController</members>
 		<name>ApexClass</name>
 	</types>
     <types>

@@ -124,6 +124,12 @@
                 <identifier>c_medicalFacilityOpeningHours</identifier>
             </componentInstance>
         </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentName>medicalFacilityMap</componentName>
+                <identifier>c_medicalFacilityMap</identifier>
+            </componentInstance>
+        </itemInstances>
         <mode>Replace</mode>
         <name>sidebar</name>
         <type>Region</type>
