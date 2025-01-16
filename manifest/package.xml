@@ -47,6 +47,7 @@
 		<name>CustomApplication</name>
 	 </types>
    <types>
+   		<members>DoctorFacilityAssociation__c</members>
         <members>Medical_Appointment__c</members>
         <members>Medical_Facility__c</members>
         <members>Medical_Insurance__c</members>
@@ -69,6 +70,7 @@
 		<name>FlexiPage</name>
 	</types>
 	<types>
+		<members>DoctorFacilityAssociation__c-DoctorFacilityAssociation Layout</members>
         <members>Medical_Appointment__c-Medical Appointment Layout</members>
         <members>Medical_Facility__c-Medical Facility Layout</members>
         <members>Medical_Insurance__c-Medical Insurance Layout</members>
