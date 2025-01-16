@@ -65,6 +65,7 @@
 		<name>CustomTab</name>
 	</types>
     <types>
+		<members>Medical_Facility_Record_Page</members>
 		<members>Premium_Clinic_UtilityBar</members>
 		<name>FlexiPage</name>
 	</types>
