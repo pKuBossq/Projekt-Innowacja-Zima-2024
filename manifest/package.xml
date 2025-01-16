@@ -8,6 +8,7 @@
 		<members>MedicalFacilitiesSyncSchedule</members>
 		<members>MedicalFacilitiesSyncScheduleTest</members>
 		<members>MedicalFacilitiesSyncTest</members>
+		<members>MedicalFacilityController</members>
 		<name>ApexClass</name>
 	</types>
     <types>
@@ -65,6 +66,7 @@
 		<name>CustomTab</name>
 	</types>
     <types>
+		<members>Medical_Facility_Record_Page</members>
 		<members>Premium_Clinic_UtilityBar</members>
 		<name>FlexiPage</name>
 	</types>
