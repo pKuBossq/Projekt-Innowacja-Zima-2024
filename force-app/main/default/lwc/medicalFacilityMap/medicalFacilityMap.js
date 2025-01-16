@@ -6,15 +6,18 @@ export default class MedicalFacilityMap extends LightningElement {
     mapMarkers = [];
 
     get hasMarkers() {
-        console.log(this.mapMarkers.length);
         return this.mapMarkers.length > 0;
     }
 
     @wire(getMedicalFacility, {facilityId : '$recordId'})
     wiredMap({ error, data }) {
-        console.log(this.recordId);
         if(data) {
-            console.log(data);
+
+            const street = data.Address__Street__s;
+            const city = data.Address__City__s;
+            const postalCode = data.Address__PostalCode__s;
+
+            if(street && city && postalCode) {
             this.mapMarkers = [
                 {
                     location: {
@@ -24,11 +27,13 @@ export default class MedicalFacilityMap extends LightningElement {
                     },
                     title: data.Name,
                     description:
-                        data.Address__City__s + ', ul.' + data.Address__Street__s + '. Kod pocztowy: ' + data.Address__PostalCode__s,
+                        data.Address__City__s + ', ul.' + data.Address__Street__s + ', Kod pocztowy: ' + data.Address__PostalCode__s,
                 },
             ];
+        } else {
+            this.mapMarkers = [];
         }
-        else if(error) {
+    } else if(error) {
             console.error(error);
         }
     }

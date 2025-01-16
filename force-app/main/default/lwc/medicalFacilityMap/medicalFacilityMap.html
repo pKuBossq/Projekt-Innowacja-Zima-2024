@@ -1,11 +1,16 @@
 <template>
-    <lightning-card title="Lokalizacja kliniki"></lightning-card>
-    <template if:true={hasMarkers}>
-        <lightning-map map-markers={mapMarkers} zoom-level="15"></lightning-map>
-    </template>
-    <template if:false={hasMarkers}>
-        <div class="slds-text-align_center slds-text-color_weak">
-            <p>Brak danych z lokalizacją kliniki.</p>
+    <lightning-card title="Lokalizacja kliniki">
+        <div class="slds-p-around_large">
+            <div class="slds-grid slds-grid_vertical">
+                <template if:true={hasMarkers}>
+                    <lightning-map map-markers={mapMarkers} zoom-level="15"></lightning-map>
+                </template>
+                <template if:false={hasMarkers}>
+                    <div class="slds-text-align_center slds-text-color_weak">
+                        <p>Brak danych z lokalizacją kliniki.</p>
+                    </div>
+                </template>
+            </div>
         </div>
-    </template>
+    </lightning-card>
 </template>
