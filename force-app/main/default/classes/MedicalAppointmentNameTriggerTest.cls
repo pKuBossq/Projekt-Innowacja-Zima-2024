@@ -2,7 +2,7 @@
 public class MedicalAppointmentNameTriggerTest {
     @isTest
     static void testTrigger() {
-        Medical_Facility__c facility = new Medical_Facility__c(Name = 'City Hospital');
+        Medical_Facility__c facility = new Medical_Facility__c(Name = 'City Hospital', Id__c = 'ST012345');
         insert facility;
 
         Person__c doctor = new Person__c(
@@ -29,10 +29,10 @@ public class MedicalAppointmentNameTriggerTest {
         );
         insert appointment;
 
-        appointment = [SELECT Name FROM Medical_Appointment__c WHERE Id = :appointment.Id];
+        appointment = [SELECT Appointment_Name__c FROM Medical_Appointment__c WHERE Id = :appointment.Id];
 
         String expectedName = 'City Hospital-Smith-Doe-28-12-2025';
-        System.assertEquals(expectedName, appointment.Name);
+        System.assertEquals(expectedName, appointment.Appointment_Name__c);
     }
     @isTest
     static void testIncompleteTrigger() {
@@ -59,9 +59,9 @@ public class MedicalAppointmentNameTriggerTest {
         );
         insert appointment;
 
-        appointment = [SELECT Name FROM Medical_Appointment__c WHERE Id = :appointment.Id];
+        appointment = [SELECT Appointment_Name__c FROM Medical_Appointment__c WHERE Id = :appointment.Id];
         
         String expectedName = 'Missing Facility Name-Smith-Doe-28-12-2025';
-        System.assertEquals(expectedName, appointment.Name);
+        System.assertEquals(expectedName, appointment.Appointment_Name__c);
     }
 }

@@ -41,15 +41,21 @@ public with sharing class DoctorScheduleSync implements Queueable, Database.Allo
                               'Piątek: "' + formatSchedule(doctor.Schedule.Friday) + '"\n' +
                               'Sobota: "' + formatSchedule(doctor.Schedule.Saturday) + '"\n' +
                               'Niedziela: "' + formatSchedule(doctor.Schedule.Sunday) + '"';
+            person.Schedule__c = schedule;
+            person.Name = 'Dr ' + doctor.FirstName + ' ' + doctor.LastName;
+            person.Personal_ID_Number__c = doctor.Pesel;
+            person.First_Name__c = doctor.FirstName;
+            person.Last_Name__c = doctor.LastName;
+            person.RecordTypeId = [SELECT Id FROM RecordType WHERE SObjectType = 'Person__c' AND Name = 'Doctor'].Id;
             doctorsToUpsert.add(person);
         }
 
-        update doctorsToUpsert
+        upsert doctorsToUpsert Person__c.DoctorId__c;
     }
 
     private String formatSchedule(Day day) {
     if (day == null) {
-        return 'Brak danych';
+        return 'Nie pracuje';
     }
     return day.StartTime + ' - ' + day.EndTime;
     }
@@ -72,6 +78,10 @@ public with sharing class DoctorScheduleSync implements Queueable, Database.Allo
     public class Doctor {
         public Schedule Schedule;
         public String DoctorId;
+        public String Name;
+        public String FirstName;
+        public String LastName;
+        public String Pesel;
     }
 
     public void execute(QueueableContext context) {
@@ -88,7 +98,7 @@ public with sharing class DoctorScheduleSync implements Queueable, Database.Allo
 
         if (res.getStatusCode() == 200) {
             List<Doctor> doctors = (List<Doctor>) JSON.deserialize(res.getBody(), List<Doctor>.class);
-            upsertDoctorSchedules(doctors);
+            updateDoctorSchedules(doctors);
         }
     }
 }
