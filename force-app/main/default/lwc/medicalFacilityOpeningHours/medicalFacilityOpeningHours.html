@@ -1,0 +1,21 @@
+<template>
+    <lightning-card title="Godziny otwarcia" icon-name="utility:clock">
+        <div class="slds-p-around_large">
+            <template if:true={parsedHours}>
+                <div class="slds-grid slds-grid_vertical">
+                    <template for:each={parsedHours} for:item="day">
+                        <div key={day.name} class="slds-grid slds-grid_align-spread slds-p-vertical_x-small">
+                            <div class="slds-col">{day.name}:</div>
+                            <div class="slds-col">{day.hours}</div>
+                        </div>
+                    </template>
+                </div>
+            </template>
+            <template if:false={parsedHours}>
+                <div class="slds-text-align_center slds-text-color_weak">
+                    Brak informacji o godzinach otwarcia.
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>
