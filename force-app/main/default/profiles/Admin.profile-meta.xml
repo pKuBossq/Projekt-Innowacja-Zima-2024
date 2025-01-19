@@ -149,6 +149,9 @@
         <readable>true</readable>
     </fieldPermissions>
     <layoutAssignments>
+        <layout>DoctorFacilityAssociation__c-DoctorFacilityAssociation Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Medical_Appointment__c-Medical Appointment Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -182,6 +185,15 @@
     <layoutAssignments>
         <layout>Prescription__c-Prescription Layout</layout>
     </layoutAssignments>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>DoctorFacilityAssociation__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
     <objectPermissions>
         <allowCreate>true</allowCreate>
         <allowDelete>true</allowDelete>

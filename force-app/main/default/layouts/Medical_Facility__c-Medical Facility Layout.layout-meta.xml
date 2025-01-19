@@ -86,6 +86,10 @@
         <fields>NAME</fields>
         <relatedList>Medical_Appointment__c.Medical_Facility__c</relatedList>
     </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <relatedList>DoctorFacilityAssociation__c.Medical_Facility__c</relatedList>
+    </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showHighlightsPanel>false</showHighlightsPanel>
     <showInteractionLogPanel>false</showInteractionLogPanel>
