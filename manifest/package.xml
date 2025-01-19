@@ -6,6 +6,7 @@
 		<members>DoctorScheduleSyncSchedule</members>
 		<members>DoctorScheduleSyncTest</members>
 		<members>EmailManager</members>
+		<members>MedicalAppointmentHandler</members>
 		<members>MedicalAppointmentNameTriggerTest</members>
 		<members>MedicalFacilitiesHttpMock</members>
 		<members>MedicalFacilitiesSync</members>
