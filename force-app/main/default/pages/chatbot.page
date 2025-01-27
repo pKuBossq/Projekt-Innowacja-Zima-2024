@@ -1,0 +1,54 @@
+<apex:page standardController="Medical_Appointment__c" recordSetVar="appointments">
+    <style type='text/css'>
+        .embeddedServiceHelpButton .helpButton .uiButton {
+            background-color: #005290;
+            font-family: "Arial", sans-serif;
+        }
+        .embeddedServiceHelpButton .helpButton .uiButton:focus {
+            outline: 1px solid #005290;
+        }
+    </style>
+
+    <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
+    <script type='text/javascript'>
+        var initESW = function(gslbBaseURL) {
+            embedded_svc.settings.displayHelpButton = true;
+            embedded_svc.settings.language = '';
+
+            embedded_svc.settings.enabledFeatures = ['LiveAgent'];
+            embedded_svc.settings.entryFeature = 'LiveAgent';
+
+            embedded_svc.init(
+                'https://cw-inn--innbmi.sandbox.my.salesforce.com',
+                'https://cw-inn--innbmi.sandbox.my.salesforce-sites.com/liveAgentSetupFlow',
+                gslbBaseURL,
+                '00DKM000000H0La',
+                'Innowacja',
+                {
+                    baseLiveAgentContentURL: 'https://c.la1-c1cs-am3.salesforceliveagent.com/content',
+                    deploymentId: '572KM000000CaRr',
+                    buttonId: '573KM000000CaRw',
+                    baseLiveAgentURL: 'https://d.la1-c1cs-am3.salesforceliveagent.com/chat',
+                    eswLiveAgentDevName: 'Innowacja',
+                    isOfflineSupportEnabled: false
+                }
+            );
+        };
+
+        if (!window.embedded_svc) {
+            var s = document.createElement('script');
+            s.setAttribute('src', 'https://cw-inn--innbmi.sandbox.my.salesforce.com/embeddedservice/5.0/esw.min.js');
+            s.onload = function() {
+                initESW(null);
+            };
+            document.body.appendChild(s);
+        } else {
+            initESW('https://service.force.com');
+        }
+    </script>
+
+    <!-- Standardowa lista rekordów Medical_Appointment__c -->
+    <apex:pageBlock title="Lista wizyt">
+        <apex:enhancedList type="Medical_Appointment__c" height="600" />
+    </apex:pageBlock>
+</apex:page>
