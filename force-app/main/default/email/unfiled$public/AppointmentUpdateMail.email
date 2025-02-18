@@ -1,0 +1,12 @@
+<img src="https://www.creativefabrica.com/wp-content/uploads/2020/03/08/Medical-stethoscope-heart-logo-Graphics-3403229-1.jpg" alt="Clinic Logo" style="width:100px;height:100px;"/>
+<p>Szanowny Pacjencie,</p>
+<p>Twoja wizyta została zaktualizowana.</p>
+<p>Dane wizyty:</p>
+<ul>
+    <li>Numer wizyty: {!Medical_Appointment__c.Appointment_Name__c}</li>
+    <li>Pacjent: {!Patient__c.First_Name__c} {!Patient__c.Last_Name__c}</li>
+    <li>Lekarz: {!Doctor__c.First_Name__c} {!Doctor__c.Last_Name__c}</li>
+    <li>Data wizyty: {!Medical_Appointment__c.Appointment_Date__c}</li>
+</ul>
+<p>Sprawdź szczegóły wizyty na Twoim koncie.</p>
+<p>Pozdrawiamy,<br>Zespół Medyczny Premium Clinic</p>

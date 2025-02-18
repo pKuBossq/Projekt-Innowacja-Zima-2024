@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <brand>
+        <headerColor>#0070D2</headerColor>
+        <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
+    </brand>
+    <description>Highest ranked clinic in Poland</description>
+    <formFactors>Small</formFactors>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
+    <isOmniPinnedViewEnabled>false</isOmniPinnedViewEnabled>
+    <label>Premium Clinic</label>
+    <navType>Standard</navType>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Medical_Facility_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Medical_Facility__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>Admin</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Medical_Facility_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Medical_Facility__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>Admin</profile>
+    </profileActionOverrides>
+    <tabs>Medical_Appointment__c</tabs>
+    <tabs>Medical_Facility__c</tabs>
+    <tabs>Medical_Insurance__c</tabs>
+    <tabs>Person__c</tabs>
+    <uiType>Lightning</uiType>
+    <utilityBar>Premium_Clinic_UtilityBar</utilityBar>
+</CustomApplication>

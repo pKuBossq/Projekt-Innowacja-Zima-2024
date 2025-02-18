@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <name>AppointmentUpdateMail</name>
+    <style>none</style>
+    <subject>Aktualizacja wizyty lekarskiej</subject>
+    <textOnly>Szanowny Pacjencie,
+
+Twoja wizyta została zaktualizowana.
+
+Dane wizyty:
+
+Numer wizyty: {!Medical_Appointment__c.Appointment_Name__c}
+Pacjent: {!Patient__c.First_Name__c} {!Patient__c.Last_Name__c}
+Lekarz: {!Doctor__c.First_Name__c} {!Doctor__c.Last_Name__c}
+Data wizyty: {!Medical_Appointment__c.Appointment_Date__c}
+
+Sprawdź szczegóły wizyty na Twoim koncie.
+
+Pozdrawiamy,
+Zespół Medyczny Premium Clinic</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>
